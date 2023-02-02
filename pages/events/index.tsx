@@ -106,7 +106,7 @@ const CountriesPage: NextPage = () => {
       <ul>
         {countries.map((country) => {
           return (
-            <li>
+            <li key={country.name}>
               <div>{country.name}</div>
               <div>{country.tips}</div>
             </li>
