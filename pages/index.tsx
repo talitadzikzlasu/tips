@@ -15,13 +15,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.container}>
-          <h1>Tips Calculator</h1>
-          <p>
-            Tip your way around the world with ease! Say goodbye to mental math
-            and awkward tip calculations when dining abroad. Our tips calculator
-            app has got your back (and your wallet) covered.
-          </p>
+        <nav className={styles.navbar}>
+          <div className={styles.logo}>Calculator </div>
+          <div>
+            <ul>
+              <li>home</li>
+              <li>countries</li>
+              <li>Tips history</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </nav>
+        <div className={styles.mainContainer}>
+          <aside className={styles.mainDescription}>
+            <h1>Tips Calculator</h1>
+            <p>
+              Tip your way around the world with ease! Say goodbye to mental
+              math and awkward tip calculations when dining abroad.{" "}
+            </p>
+            <p>
+              Our tips calculator app has got your back (and your wallet)
+              covered.
+            </p>
+          </aside>
+          <div className={styles.mainImage}>
+            <img src="https://i.ibb.co/wJVmxpv/tips-main.png" />
+          </div>
         </div>
       </main>
     </>

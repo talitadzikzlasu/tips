@@ -1,19 +1,136 @@
+@use "styles/media";
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem 1rem 1rem;
+
   min-height: 100vh;
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    .mainDescription {
+      width: 100%;
+      padding: 1rem;
+    }
+    .mainImage {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
+@include media.for-tablet-portrait-up {
+  .main {
+    .mainContainer {
+      .mainDescription {
+        padding: 2rem;
+        h1 {
+          text-align: center;
+        }
+      }
+      .mainImage {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+@include media.for-tablet-landscape-up {
+  .main {
+    .mainContainer {
+      flex-direction: row;
+      .mainDescription {
+        width: 50%;
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include media.for-desktop-up {
+  .main {
+    padding: 6rem 6rem 1rem;
+  }
+}
+
+@include media.for-middle-desktop-up {
+  .main {
+    padding: 4rem 1rem 1rem;
+    .mainContainer {
+      .mainDescription {
+        padding: 6rem;
+        h1 {
+          font-size: 4rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .mainImage {
+        width: 50%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// .description {
+//   display: inherit;
+//   justify-content: inherit;
+//   align-items: inherit;
+//   font-size: 0.85rem;
+//   max-width: var(--max-width);
+//   width: 100%;
+//   z-index: 2;
+//   font-family: var(--font-mono);
+// }
+
+.navbar {
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  .logo {
+    font-size: 2rem;
+  }
+  ul {
+    display: flex;
+    gap: 4rem;
+    margin-right: 4rem;
+    li {
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      // font-weight: 600;
+      list-style-type: none;
+      text-transform: lowercase;
+      color: rgb(58, 57, 57);
+
+      cursor: pointer;
+      &:hover {
+        color: black;
+      }
+    }
+  }
 }
