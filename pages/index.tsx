@@ -5,12 +5,38 @@ import styles from "@/styles/Home.module.scss";
 import { useEffect, useState } from "react";
 import classnames from "classnames";
 import Link from "next/link";
+import ky from "ky";
+import { FlagIcon, FlagIconCode } from "react-flag-kit";
+import { getCurrencyByCode, CodeType } from "@/data";
+interface locationProps {
+  ip: string;
+  country?: FlagIconCode;
+  city: string;
+  timezone: string;
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
 
+  const [location, setLocation] = useState<locationProps>({
+    ip: "",
+    country: undefined,
+    city: "",
+    timezone: "",
+  });
+
+  const [tip, setTip] = useState<number>();
+  const [smallTip, setSmallTip] = useState<number>();
+  const [generousTip, setGenerousTip] = useState<number>();
+  const getGeoInfo = async () => {
+    const response: locationProps = await ky
+      .get("https://ipapi.co/json/")
+      .json();
+    setLocation(response);
+    console.log(response);
+  };
   useEffect(() => {
     window.onscroll = function () {
       if (window.scrollY > 50) {
@@ -20,6 +46,25 @@ export default function Home() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    getGeoInfo();
+  }, []);
+
+  const countTip = (event: any) => {
+    event.preventDefault();
+    console.log("EVENT", event);
+    setTip(
+      Math.round((0.1 * event.target.bill.value + Number.EPSILON) * 100) / 100
+    );
+    setGenerousTip(
+      Math.round((0.2 * event.target.bill.value + Number.EPSILON) * 100) / 100
+    );
+    setSmallTip(
+      Math.round((0.2 * event.target.bill.value + Number.EPSILON) * 100) / 100
+    );
+    console.log("BBBBBBBBBBBBb", event.target.bill.value);
+  };
 
   return (
     <>
@@ -65,11 +110,47 @@ export default function Home() {
               Our tips calculator app has got your back (and your wallet)
               covered.
             </p>
+            <form
+              onSubmit={(event) => {
+                countTip(event);
+              }}
+            >
+              <div className={styles.billRow}>
+                <span>Your bill:</span>
+                <input className={styles.billInput} name="bill"></input>
+                {location?.country && (
+                  <span>
+                    {/* @ts-ignore */}
+                    {getCurrencyByCode([location.country as CodeType])}
+                  </span>
+                )}
+                <button className={styles.billButton} type="submit">
+                  Count tip
+                </button>
+                {location?.country && (
+                  <FlagIcon
+                    className={styles.flagButton}
+                    code={location.country}
+                    size={48}
+                  />
+                )}
+              </div>
+            </form>
+            {tip && (
+              <div className={styles.tipsResults}>
+                <div className={styles.tipsData}>
+                  <div>Generous tip: {tip}</div>
+                  <div>Regular tip: {tip - 10}</div>
+                  <div>Minimum tip: {tip / 10}</div>
+                </div>
+              </div>
+            )}
           </aside>
           <div className={styles.mainImage}>
             <img src="https://i.ibb.co/wJVmxpv/tips-main.png" />
           </div>
         </div>
+        <div>{tip}</div>
       </main>
     </>
   );

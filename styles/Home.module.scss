@@ -1,4 +1,5 @@
 @use "styles/media";
+@use "styles/colors";
 
 .main {
   display: flex;
@@ -32,6 +33,11 @@
       font-size: 0.9rem;
       text-align: center;
       margin-top: 1rem;
+    }
+    .flagButton {
+      border-radius: 50%;
+      // border: 3px solid grey;
+      filter: drop-shadow(2px 2px 2px rgb(219, 219, 219));
     }
   }
 }
@@ -84,6 +90,58 @@
         }
         p {
           font-size: 1.2rem;
+        }
+        .billRow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 2rem;
+          width: 100%;
+          span {
+            font-size: 2rem;
+          }
+          input {
+            height: 44px;
+            border-radius: 12px;
+            border: 2px rgb(186, 191, 255) solid;
+            font-size: 1.5rem;
+            color: rgb(40, 44, 80);
+            width: 150px;
+            text-align: center;
+          }
+          button {
+            height: 44px;
+            border-radius: 20px;
+            background-color: colors.$little-boy-blue;
+
+            border: 2px;
+            padding: 0.5rem 2rem;
+            font-size: 1.5rem;
+            color: colors.$russian-violet;
+            cursor: pointer;
+            &:hover {
+              background-color: colors.$cornflower-blue;
+            }
+          }
+        }
+
+        .tipsResults {
+          width: 600px;
+          height: 600px;
+          content: "dzik";
+          background-image: url("/assets/blob.svg");
+          background-size: 600px;
+          background-repeat: no-repeat;
+          background-position-x: left;
+          background-position-y: -50px;
+          display: flex;
+          justify-content: center;
+          padding: 4rem;
+          .tipsData {
+            width: 80%;
+            font-size: 2.2rem;
+          }
         }
       }
       .mainImage {
