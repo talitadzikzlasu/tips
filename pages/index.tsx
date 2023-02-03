@@ -139,9 +139,9 @@ export default function Home() {
             {tip && (
               <div className={styles.tipsResults}>
                 <div className={styles.tipsData}>
-                  <div>Generous tip: {tip}</div>
-                  <div>Regular tip: {tip - 10}</div>
-                  <div>Minimum tip: {tip / 10}</div>
+                  <div>Generous tip: {generousTip}</div>
+                  <div>Regular tip: {tip}</div>
+                  <div>Minimum tip: {smallTip}</div>
                 </div>
               </div>
             )}
