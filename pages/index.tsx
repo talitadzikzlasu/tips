@@ -61,7 +61,7 @@ export default function Home() {
       Math.round((0.2 * event.target.bill.value + Number.EPSILON) * 100) / 100
     );
     setSmallTip(
-      Math.round((0.2 * event.target.bill.value + Number.EPSILON) * 100) / 100
+      Math.round((0.05 * event.target.bill.value + Number.EPSILON) * 100) / 100
     );
     console.log("BBBBBBBBBBBBb", event.target.bill.value);
   };
