@@ -9,7 +9,7 @@ export const CountryList = ({ countries }: CountryListProps) => {
   return (
     <ul>
       {countries.map((country) => {
-        return <CountryItem country={country} />;
+        return <CountryItem key={country.name} country={country} />;
       })}
     </ul>
   );
