@@ -1,0 +1,12 @@
+@use "styles/media";
+@use "styles/colors";
+
+.container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 5rem;
+}
