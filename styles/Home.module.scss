@@ -22,7 +22,6 @@
       img {
         width: 100%;
       }
-      // animation: 1s ease-out 0s 1 appear;
       animation: 800ms ease-out 0s 1 appear;
     }
     h1 {
@@ -36,7 +35,6 @@
     }
     .flagButton {
       border-radius: 50%;
-      // border: 3px solid grey;
       filter: drop-shadow(2px 2px 2px rgb(219, 219, 219));
     }
   }
@@ -153,52 +151,10 @@
     }
   }
 }
-// .description {
-//   display: inherit;
-//   justify-content: inherit;
-//   align-items: inherit;
-//   font-size: 0.85rem;
-//   max-width: var(--max-width);
-//   width: 100%;
-//   z-index: 2;
-//   font-family: var(--font-mono);
-// }
 
-.navbar {
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  .logo {
-    font-size: 2rem;
-  }
-  ul {
-    display: flex;
-    gap: 4rem;
-    margin-right: 4rem;
-    li {
-      font-size: 1.2rem;
-      font-family: Arial, Helvetica, sans-serif;
-      // font-weight: 600;
-      list-style-type: none;
-      text-transform: lowercase;
-      color: rgb(58, 57, 57);
 
-      cursor: pointer;
-      &:hover {
-        color: black;
-      }
-    }
-  }
-}
 
-.navbarShaddow {
-  filter: drop-shadow(0 -9px 10px #afafaf);
-}
+
 
 @keyframes appear {
   0% {
@@ -223,7 +179,6 @@
 @keyframes appear-text {
   0% {
     opacity: 0;
-    // transform: translateY(7%);
   }
   25% {
     opacity: 0.2;
@@ -236,6 +191,5 @@
   }
   100% {
     opacity: 1;
-    // transform: translateX(0);
   }
 }

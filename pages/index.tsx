@@ -8,6 +8,7 @@ import Link from "next/link";
 import ky from "ky";
 import { FlagIcon, FlagIconCode } from "react-flag-kit";
 import { getCurrencyByCode, CodeType } from "@/data";
+import { Navigation } from "@/components/layout/Navigation";
 interface locationProps {
   ip: string;
   country?: FlagIconCode;
@@ -53,7 +54,6 @@ export default function Home() {
 
   const countTip = (event: any) => {
     event.preventDefault();
-    console.log("EVENT", event);
     setTip(
       Math.round((0.1 * event.target.bill.value + Number.EPSILON) * 100) / 100
     );
@@ -63,7 +63,6 @@ export default function Home() {
     setSmallTip(
       Math.round((0.05 * event.target.bill.value + Number.EPSILON) * 100) / 100
     );
-    console.log("BBBBBBBBBBBBb", event.target.bill.value);
   };
 
   return (
@@ -75,30 +74,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <nav
-          className={classnames(
-            styles.navbar,
-            scrolled && styles.navbarShaddow
-          )}
-        >
-          <div className={styles.logo}>Calculator </div>
-          <div>
-            <ul>
-              <li>
-                <Link href="/">home</Link>
-              </li>
-              <li>
-                <Link href="/countries">countries</Link>
-              </li>
-              <li>
-                <Link href="/history">Tips history</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Navigation scrolled={scrolled} />
         <div className={styles.mainContainer}>
           <aside className={styles.mainDescription}>
             <h1>Tips Calculator</h1>
