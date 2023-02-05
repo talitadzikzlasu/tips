@@ -1,6 +1,23 @@
+import { FlagIconCode } from "react-flag-kit";
+
+// export type countryType = {
+//   code: FlagIconCode;
+//   name: string;
+//   image: string;
+//   continent: string;
+//   tips: string;
+//   restaurants: string;
+//   bars: string;
+//   taxi: string;
+//   hotel: string;
+//   other: string;
+// };
+
 const countries = [
   {
     name: "France",
+    code: "FR",
+    image: "https://i.ibb.co/z2cnqb9/photo-1565958011703-44f9829ba187.png",
     continent: "Europe",
     tips: "Ah, bonjour! In France, leaving a tip is a sign of appreciation and good service. Usually, 10% of the bill is the standard, but feel free to round up or add a few extra coins. Tipping in bars and cafes is optional, but rounding up the total bill is a nice gesture. Taxi drivers also appreciate rounding up the fare.  ",
     restaurants: "10% of the total bill or round up the total bill",
@@ -13,6 +30,8 @@ const countries = [
   },
   {
     name: "Italy",
+    code: "IT",
+    image: "https://i.ibb.co/68xdpnx/photo-1565299624946-b28f40a0ae38.png",
     continent: "Europe",
     tips: "Ciao! Tipping in Italy is expected, especially in restaurants. The standard is to leave 10% of the bill, but feel free to round up. Tipping baristas in cafes is not expected, but rounding up the total bill is appreciated. Taxi drivers appreciate rounding up the fare.  ",
     restaurants: "10% of the total bill or round up the total bill",
@@ -25,6 +44,8 @@ const countries = [
   },
   {
     name: "Germany",
+    code: "DE",
+    image: "https://i.ibb.co/fpgqZsP/photo-1512621776951-a57141f2eefd.png",
     continent: "Europe",
     tips: "Guten Tag! Tipping in Germany is expected, especially in restaurants. The standard is to leave 10% of the bill, but feel free to round up. Tipping in bars is not expected, but rounding up the total bill is appreciated. Taxi drivers appreciate rounding up the fare.  ",
     restaurants: "10% of the total bill or round up the total bill",
@@ -37,6 +58,8 @@ const countries = [
   },
   {
     name: "United Kingdom",
+    code: "GB",
+    image: "https://i.ibb.co/ZLmxHhR/photo-1498837167922-ddd27525d352.png",
     continent: "Europe",
     tips: "Cheers! Tipping in the UK is expected, especially in restaurants. The standard is to leave 10-15% of the bill, but feel free to round up. Tipping in bars is not expected, but rounding up the total bill is appreciated. taxi drivers appreciate rounding up the fare.  ",
     restaurants: "10-15% of the total bill or round up the total bill",
@@ -49,6 +72,8 @@ const countries = [
   },
   {
     name: "Spain",
+    code: "ES",
+    image: "https://i.ibb.co/KWsY542/photo-1473093295043-cdd812d0e601.png",
     continent: "Europe",
     tips: "Hola! Tipping in Spain is expected, especially in restaurants. The standard is to leave 10% of the bill, but feel free to round up. Tipping in bars is not expected, but rounding up the total bill is appreciated. taxi drivers appreciate rounding up the fare.  ",
     restaurants: "10% of the total bill or round up the total bill",
@@ -61,6 +86,8 @@ const countries = [
   },
   {
     name: "Netherlands",
+    code: "NE",
+    image: "https://i.ibb.co/sjd7N5w/photo-1484980972926-edee96e0960d.png",
     continent: "Europe",
     tips: "Hallo! Tipping in the Netherlands is expected, especially in restaurants. The standard is to leave 10% of the bill, but feel free to round up. Tipping in bars is not expected, but rounding up the total bill is appreciated. taxi drivers appreciate rounding up the fare.  ",
     restaurants: "10% of the total bill or round up the total bill",
@@ -73,6 +100,8 @@ const countries = [
   },
   {
     name: "Sweden",
+    code: "SE",
+    image: "https://i.ibb.co/0ZdV1bP/photo-1455619452474-d2be8b1e70cd.png",
     continent: "Europe",
     tips: "Hej! Tipping in Sweden is not expected, but rounding up the total bill in restaurants is appreciated. Tipping in bars is not expected, but rounding up the total bill is appreciated. taxi drivers appreciate rounding up the fare.  ",
     restaurants: "Round up the total bill",
@@ -85,6 +114,8 @@ const countries = [
   },
   {
     name: "Norway",
+    code: "NO",
+    image: "https://i.ibb.co/k2xTPX4/photo-1414235077428-338989a2e8c0.png",
     continent: "Europe",
     tips: "Hei! Tipping in Norway is not expected, but rounding up the total bill in restaurants is appreciated. Tipping in bars is not expected, but rounding up the total bill is appreciated. taxi drivers appreciate rounding up the fare.  ",
     restaurants: "Round up the total bill",
@@ -96,11 +127,34 @@ const countries = [
       "Tipping in hair salons and spas is not common, but rounding up the total bill is appreciated.",
   },
 ];
+const images = [
+  "https://i.ibb.co/4sMgxQK/photo-1496116218417-1a781b1c416c.png",
+  "https://i.ibb.co/kcRg3vW/photo-1532980400857-e8d9d275d858.png",
+  "https://i.ibb.co/hdW8wtB/photo-1496412705862-e0088f16f791.png",
+  "https://i.ibb.co/bdKtwJT/photo-1475090169767-40ed8d18f67d.png",
+  "https://i.ibb.co/QndpwnW/photo-1470337458703-46ad1756a187.png",
+  "https://i.ibb.co/Fw3tCXs/photo-1488900128323-21503983a07e.png",
+  "https://i.ibb.co/82gvHCR/photo-1592861956120-e524fc739696.png",
+  "https://i.ibb.co/4mHNsTN/photo-1424847651672-bf20a4b0982b.png",
+  "https://i.ibb.co/684scM4/photo-1533777857889-4be7c70b33f7.png",
+  "https://i.ibb.co/9VHcgy0/photo-1544148103-0773bf10d330.png",
+  "https://i.ibb.co/DLmjCKz/photo-1471253794676-0f039a6aae9d.png",
+  "https://i.ibb.co/FsBZY59/photo-1512485800893-b08ec1ea59b1.png",
+  "https://i.ibb.co/BGNBR4b/photo-1507914372368-b2b085b925a1.png",
+  "https://i.ibb.co/ZMcKSzF/photo-1544986581-efac024faf62.png",
+  "https://i.ibb.co/ZS40Cnm/photo-1495474472287-4d71bcdd2085.png",
+  "https://i.ibb.co/WpBMD9h/photo-1497935586351-b67a49e012bf.png",
+  "https://i.ibb.co/H7xSrQb/photo-1514066558159-fc8c737ef259.png",
+  "https://i.ibb.co/5rpQCz4/photo-1567620905732-2d1ec7ab7445.png",
+  "https://i.ibb.co/gvC8k7X/photo-1540189549336-e6e99c3679fe.png",
+];
 
-export type countryType = typeof countries[0];
+export type countryType = Omit<typeof countries[0], "code"> & {
+  code: FlagIconCode;
+};
 
 export const getAllCountries = () => {
-  return countries;
+  return countries as countryType[];
 };
 
 const countryToCurrency = {
